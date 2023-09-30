@@ -247,7 +247,6 @@ int main() {
     double parallelSumOfRadii = helix.getParallelSumOfRadii();
 
     std::cout << "Parallel sum of radii: " << parallelSumOfRadii << std::endl;
-    std::cout << "Press any key to exit21231...";
     std::cout << "Press any key to exit...";
     std::cin.get();
 
