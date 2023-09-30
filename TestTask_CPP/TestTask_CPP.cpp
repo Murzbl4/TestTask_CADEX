@@ -84,7 +84,7 @@ public:
     Vector3D getDerivative(double t) const override {
         double dx = -majorAxis * std::sin(t);
         double dy = minorAxis * std::cos(t);
-        double dz = 0.0;  // Derivative of z with respect to t is always zero for an ellipse lying on the xy-plane
+        double dz = 0.0; 
         return Vector3D(dx, dy, dz);
     }
 
@@ -168,7 +168,6 @@ public:
     }
 
     double getRandomRadius() const {
-        // Generate a random positive radius
         return (std::rand() % 100 + 1) / 10.0;
     }
 
@@ -228,9 +227,18 @@ public:
 
 int main() {
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
+    int count_Circle = 0;
+    int count_Ellipse = 0;
+    int count_Helix = 0;
+    std::cout << "Enter the number of Circle" << std::endl;
+    std::cin >> count_Circle;
+    std::cout << "Enter the number of Ellipse" << std::endl;
+    std::cin >> count_Ellipse;
+    std::cout << "Enter the number of Helix" << std::endl;
+    std::cin >> count_Helix;
 
     ThreeDHelix helix;
-    helix.generateRandomCurves(80, 80, 80);
+    helix.generateRandomCurves(count_Circle, count_Ellipse, count_Helix);
 
     helix.printCoordinatesAndDerivatives(M_PI / 4);
 
